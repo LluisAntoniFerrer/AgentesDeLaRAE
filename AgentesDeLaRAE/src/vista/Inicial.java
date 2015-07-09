@@ -14,6 +14,7 @@ public class Inicial extends JPanel {
 	 */
 	public Inicial() {
 		setLayout(null);
+		setBounds(0,0,800,640);
 		
 		JLabel label = new JLabel("1");
 		label.setForeground(Color.WHITE);

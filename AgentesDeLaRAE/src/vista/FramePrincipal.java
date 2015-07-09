@@ -10,6 +10,7 @@ import javax.swing.border.EmptyBorder;
 public class FramePrincipal extends JFrame {
 
 	private Inicial inicial;
+	
 
 	/**
 	 * Create the frame.
