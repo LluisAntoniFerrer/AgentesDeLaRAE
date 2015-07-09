@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Font;
 
 public class Inicial extends JPanel {
+	
 	private JLabel fondo;
 	/**
 	 * Create the panel.
