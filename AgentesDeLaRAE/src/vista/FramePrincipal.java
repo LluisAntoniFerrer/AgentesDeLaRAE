@@ -11,7 +11,9 @@ import javax.swing.border.EmptyBorder;
 public class FramePrincipal extends JFrame {
 
 	//private Inicial inicial;
+
 	private JPanel contenedor,portada, inicial, pregunta1,pregunta2,pregunta3,pregunta4,pregunta5,pregunta6,pregunta7,pregunta8,pregunta9, pregunta10, pregunta11,respuesta;
+
 
 	/**
 	 * Create the frame.
@@ -27,7 +29,7 @@ public class FramePrincipal extends JFrame {
 		getContentPane().add(contenedor);
 		contenedor.setBounds(0, 23, 800, 640);
 		contenedor.setLayout(new CardLayout(0, 0));
-		
+
 		portada= new Portada(this);
 		inicial= new Inicial(this);
 		pregunta1= new Pregunta1(this);
@@ -43,6 +45,7 @@ public class FramePrincipal extends JFrame {
 		pregunta11= new Pregunta11(this);
 		respuesta= new Respuesta(this);
 		
+
 		contenedor.add(portada, "portada");
 		contenedor.add(inicial, "inicial");
 		contenedor.add(pregunta1,"pregunta1");
@@ -57,7 +60,7 @@ public class FramePrincipal extends JFrame {
 		contenedor.add(pregunta10,"pregunta10");
 		contenedor.add(pregunta11,"pregunta11");
 		contenedor.add(respuesta,"respuesta");
-		
+
 	}
 	public void CambiaFondo(String panel){
 		CardLayout c=(CardLayout) contenedor.getLayout();
