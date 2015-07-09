@@ -17,10 +17,10 @@ public class Inicial extends JPanel {
 		setLayout(null);
 		setBounds(0,0,800,640);
 		
-		JLabel label = new JLabel("1");
+		JLabel label = new JLabel("2");
 		label.setForeground(Color.WHITE);
 		label.setFont(new Font("Segoe Print", Font.BOLD, 14));
-		label.setBounds(639, 562, 16, 14);
+		label.setBounds(650, 560, 16, 14);
 		add(label);
 		
 		JLabel label_2 = new JLabel("15");
@@ -29,7 +29,7 @@ public class Inicial extends JPanel {
 		label_2.setBounds(494, 411, 25, 14);
 		add(label_2);
 		
-		JLabel label_1 = new JLabel("4");
+		JLabel label_1 = new JLabel("3");
 		label_1.setForeground(Color.WHITE);
 		label_1.setFont(new Font("Segoe Print", Font.BOLD, 14));
 		label_1.setBounds(598, 484, 16, 14);
@@ -59,16 +59,16 @@ public class Inicial extends JPanel {
 		label_6.setBounds(464, 444, 25, 14);
 		add(label_6);
 		
-		JLabel label_7 = new JLabel("2");
+		JLabel label_7 = new JLabel("1");
 		label_7.setForeground(Color.WHITE);
 		label_7.setFont(new Font("Segoe Print", Font.BOLD, 16));
-		label_7.setBounds(719, 530, 16, 14);
+		label_7.setBounds(753, 542, 16, 14);
 		add(label_7);
 		
-		JLabel label_8 = new JLabel("6");
+		JLabel label_8 = new JLabel("5");
 		label_8.setForeground(Color.WHITE);
 		label_8.setFont(new Font("Segoe Print", Font.BOLD, 16));
-		label_8.setBounds(354, 525, 16, 14);
+		label_8.setBounds(359, 525, 16, 14);
 		add(label_8);
 		
 		JLabel label_9 = new JLabel("8");
@@ -89,13 +89,13 @@ public class Inicial extends JPanel {
 		label_11.setBounds(444, 419, 25, 14);
 		add(label_11);
 		
-		JLabel label_12 = new JLabel("5");
+		JLabel label_12 = new JLabel("6");
 		label_12.setForeground(Color.WHITE);
 		label_12.setFont(new Font("Segoe Print", Font.BOLD, 16));
 		label_12.setBounds(267, 540, 16, 14);
 		add(label_12);
 		
-		JLabel label_13 = new JLabel("3");
+		JLabel label_13 = new JLabel("4");
 		label_13.setForeground(Color.WHITE);
 		label_13.setFont(new Font("Segoe Print", Font.BOLD, 16));
 		label_13.setBounds(494, 509, 16, 14);
@@ -109,12 +109,12 @@ public class Inicial extends JPanel {
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(Inicial.class.getResource("/images/cartel60.png")));
-		lblNewLabel.setBounds(696, 509, 60, 87);
+		lblNewLabel.setBounds(730, 521, 60, 87);
 		add(lblNewLabel);
 		
 		JLabel label7 = new JLabel("");
 		label7.setIcon(new ImageIcon(Inicial.class.getResource("/images/cartel60.png")));
-		label7.setBounds(615, 542, 60, 87);
+		label7.setBounds(626, 540, 60, 87);
 		add(label7);
 		
 		JLabel label2 = new JLabel("");
@@ -129,7 +129,7 @@ public class Inicial extends JPanel {
 		
 		JLabel label3 = new JLabel("");
 		label3.setIcon(new ImageIcon(Inicial.class.getResource("/images/cartel45.png")));
-		label3.setBounds(339, 511, 45, 65);
+		label3.setBounds(344, 511, 45, 65);
 		add(label3);
 		
 		JLabel label4 = new JLabel("");
