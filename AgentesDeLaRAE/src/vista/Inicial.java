@@ -8,6 +8,7 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import javax.swing.JButton;
 
 public class Inicial extends JPanel {
 	
@@ -62,12 +63,6 @@ public class Inicial extends JPanel {
 		label_6.setBounds(464, 444, 25, 14);
 		add(label_6);
 		
-		JLabel label_7 = new JLabel("1");
-		label_7.setForeground(Color.WHITE);
-		label_7.setFont(new Font("Segoe Print", Font.BOLD, 16));
-		label_7.setBounds(753, 542, 16, 14);
-		add(label_7);
-		
 		JLabel label_8 = new JLabel("5");
 		label_8.setForeground(Color.WHITE);
 		label_8.setFont(new Font("Segoe Print", Font.BOLD, 16));
@@ -117,8 +112,8 @@ public class Inicial extends JPanel {
 				framePrincipal.CambiaFondo("pregunta1");
 			}
 		});
-		lblNewLabel.setIcon(new ImageIcon(Inicial.class.getResource("/images/cartel60.png")));
-		lblNewLabel.setBounds(730, 521, 60, 87);
+		lblNewLabel.setIcon(new ImageIcon(Inicial.class.getResource("/images/U1.png")));
+		lblNewLabel.setBounds(15, 86, 236, 43);
 		add(lblNewLabel);
 		
 		JLabel label7 = new JLabel("");
@@ -192,7 +187,7 @@ public class Inicial extends JPanel {
 		add(label15);
 		
 		fondo = new JLabel("");
-		fondo.setIcon(new ImageIcon(Inicial.class.getResource("/images/fondo1.png")));
+		fondo.setIcon(new ImageIcon(Inicial.class.getResource("/images/papiro.png")));
 		fondo.setBounds(0, 0, 800, 640);
 		add(fondo);
 	}
