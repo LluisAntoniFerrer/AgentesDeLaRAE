@@ -12,20 +12,15 @@ import java.awt.Font;
 
 import javax.swing.JTextArea;
 
+import controladora.Reproductor;
+
 import java.awt.SystemColor;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-import javazoom.jl.decoder.JavaLayerException;
-import javazoom.jl.player.advanced.*;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 
 public class Pregunta8 extends JPanel {
 	private int control=0;
-	AdvancedPlayer reproductor = null;
 	/**
 	 * Create the panel.
 	 * @param framePrincipal 
@@ -36,12 +31,13 @@ public class Pregunta8 extends JPanel {
 		setLayout(null);
 		setBounds(0,0,800,640);
 		
-		File sonido = new File("/AgentesDeLaRAE/src/sonidos/sonido.mp3");
-		try {
-			reproductor = new AdvancedPlayer(new FileInputStream(sonido));
-			System.out.println("aa");
-		} catch (FileNotFoundException e1) {
-		} catch (JavaLayerException e1) {
+		Reproductor mi_reproductor = new Reproductor();
+		  try {
+			mi_reproductor.AbrirFichero("src/sonidos/sonido.wav");
+
+		  } catch (Exception e2) {
+			// TODO Auto-generated catch block
+			e2.printStackTrace();
 		}
 		
 		
@@ -50,21 +46,56 @@ public class Pregunta8 extends JPanel {
 			public void actionPerformed(ActionEvent e) {
 				if(control==0){
 				control=1;
-				button.setIcon(new ImageIcon(Pregunta8.class.getResource("/images/stop1.png")));
+				button.setIcon(new ImageIcon(Pregunta8.class.getResource("/images/pause.png")));
 				try {
-					reproductor.play();
-				} catch (JavaLayerException e1) {
+					mi_reproductor.Play();
+				} catch (Exception ex) {
+				  System.out.println("Error: " + ex.getMessage());
 				}
-				}else{
-					control=0;
+				}else if(control==1){
+					control=2;
 					button.setIcon(new ImageIcon(Pregunta8.class.getResource("/images/play1.png")));
-					reproductor.stop();
+					try {
+						mi_reproductor.Pausa();
+					} catch (Exception e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}else if(control==2){
+					control=1;
+					button.setIcon(new ImageIcon(Pregunta8.class.getResource("/images/pause.png")));
+					try {
+						mi_reproductor.Continuar();
+					} catch (Exception ex) {
+					  System.out.println("Error: " + ex.getMessage());
+					}
 				}
 			}
 		});
 		button.setIcon(new ImageIcon(Pregunta8.class.getResource("/images/play1.png")));
-		button.setBounds(572, 155, 75, 75);
+		button.setBounds(489, 155, 75, 75);
 		add(button);
+		
+		JButton buttonStop = new JButton("");
+		
+		buttonStop.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				
+				control=0;
+				button.setIcon(new ImageIcon(Pregunta8.class.getResource("/images/play1.png")));
+				try {
+					mi_reproductor.Stop();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+			}
+		});
+		buttonStop.setIcon(new ImageIcon(Pregunta8.class.getResource("/images/stop1.png")));
+		buttonStop.setBounds(572, 155, 75, 75);
+		add(buttonStop);
 		
 		JLabel lblDictadoClica = new JLabel("7. Dictado. Clica en el bot\u00F3n \"Play\" y copia el texto en el");
 		lblDictadoClica.setFont(new Font("Segoe Print", Font.BOLD, 18));
@@ -77,10 +108,10 @@ public class Pregunta8 extends JPanel {
 		add(lblRecuadroDeAbajo);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setWrapStyleWord(true);
 		textArea.setLineWrap(true);
+		textArea.setWrapStyleWord(true);
 		textArea.setFont(new Font("Segoe Print", Font.BOLD, 14));
-		textArea.setBackground(SystemColor.menu);
+		textArea.setBackground(Color.LIGHT_GRAY);
 		textArea.setBounds(112, 241, 576, 275);
 		add(textArea);
 		

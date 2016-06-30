@@ -187,7 +187,7 @@ public class Inicial extends JPanel {
 		add(label15);
 		
 		fondo = new JLabel("");
-		fondo.setIcon(new ImageIcon(Inicial.class.getResource("/images/papiro.png")));
+		fondo.setIcon(new ImageIcon(Inicial.class.getResource("/images/papiro_agentes.png")));
 		fondo.setBounds(0, 0, 800, 640);
 		add(fondo);
 	}

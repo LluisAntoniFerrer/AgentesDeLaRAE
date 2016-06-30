@@ -47,8 +47,8 @@ public class Portada extends JPanel {
 			}
 		});
 		label.setVerticalAlignment(SwingConstants.BOTTOM);
-		label.setIcon(new ImageIcon(Portada.class.getResource("/images/protada.png")));
-		label.setBounds(10, 11, 780, 688);
+		label.setIcon(new ImageIcon(Portada.class.getResource("/images/papiro_agentes.png")));
+		label.setBounds(0, 0, 800, 640);
 		add(label);
 
 	}
