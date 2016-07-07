@@ -36,7 +36,7 @@ public class Respuesta extends JPanel {
 		btnMenu.setBounds(511, 524, 194, 29);
 		add(btnMenu);
 		
-		JButton btnReiniciarNivel = new JButton("Reiniciar nivel");
+		JButton btnReiniciarNivel = new JButton("¿Empezar de nuevo?");
 		btnReiniciarNivel.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				framePrincipal.CambiaFondo("pregunta1");

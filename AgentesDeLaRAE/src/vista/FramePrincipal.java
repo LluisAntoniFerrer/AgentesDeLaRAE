@@ -8,11 +8,15 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+import vista.misiones.Carteles;
+import vista.misiones.Explicacion;
+import vista.misiones.Niveles;
+
 public class FramePrincipal extends JFrame {
 
 	//private Inicial inicial;
 
-	private JPanel contenedor,portada, inicial, pregunta1,pregunta2,pregunta3,pregunta4,pregunta5,pregunta6,pregunta7,pregunta8,pregunta9, pregunta10, pregunta11,respuesta;
+	private JPanel contenedor,portada, inicial, pregunta1,pregunta2,pregunta3,pregunta4,pregunta5,pregunta6,pregunta7,pregunta8,pregunta9, pregunta10, pregunta11,respuesta,carteles,niveles,explicacion;
 
 
 	/**
@@ -44,6 +48,10 @@ public class FramePrincipal extends JFrame {
 		pregunta10= new Pregunta10(this);
 		pregunta11= new Pregunta11(this);
 		respuesta= new Respuesta(this);
+		carteles= new Carteles(this);
+		niveles = new Niveles(this);
+		explicacion= new Explicacion(this);
+		
 		
 
 		contenedor.add(portada, "portada");
@@ -60,11 +68,18 @@ public class FramePrincipal extends JFrame {
 		contenedor.add(pregunta10,"pregunta10");
 		contenedor.add(pregunta11,"pregunta11");
 		contenedor.add(respuesta,"respuesta");
+		contenedor.add(carteles,"carteles");
+		contenedor.add(niveles,"niveles");
+		contenedor.add(explicacion,"explicacion");
 
 	}
 	public void CambiaFondo(String panel){
 		CardLayout c=(CardLayout) contenedor.getLayout();
 		c.show(contenedor, panel);
 	}
+	public void temporizadorCarteles(){
+		((Carteles) carteles).comenzar();
+	}
+
 
 }

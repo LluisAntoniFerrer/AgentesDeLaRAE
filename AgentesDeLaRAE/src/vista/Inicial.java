@@ -113,8 +113,19 @@ public class Inicial extends JPanel {
 			}
 		});
 		lblNewLabel.setIcon(new ImageIcon(Inicial.class.getResource("/images/U1.png")));
-		lblNewLabel.setBounds(15, 86, 236, 43);
+		lblNewLabel.setBounds(18, 54, 236, 43);
 		add(lblNewLabel);
+		
+		JLabel lblMisiones = new JLabel("");
+		lblMisiones.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				framePrincipal.CambiaFondo("niveles");
+			}
+		});
+		lblMisiones.setIcon(new ImageIcon(Inicial.class.getResource("/images/misiones.png")));
+		lblMisiones.setBounds(309, 153, 132, 43);
+		add(lblMisiones);
 		
 		JLabel label7 = new JLabel("");
 		label7.setIcon(new ImageIcon(Inicial.class.getResource("/images/cartel60.png")));
