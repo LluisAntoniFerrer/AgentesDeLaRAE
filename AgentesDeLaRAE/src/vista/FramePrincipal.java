@@ -8,15 +8,17 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
-import vista.misiones.Carteles;
-import vista.misiones.Explicacion;
-import vista.misiones.Niveles;
+import vista.misiones.Acentuacion;
+import vista.misiones.ExplicacionAcen;
+import vista.misiones.ExplicacionGyJ;
+import vista.misiones.Misiones;
+import vista.misiones.GyJ;
 
 public class FramePrincipal extends JFrame {
 
 	//private Inicial inicial;
 
-	private JPanel contenedor,portada, inicial, pregunta1,pregunta2,pregunta3,pregunta4,pregunta5,pregunta6,pregunta7,pregunta8,pregunta9, pregunta10, pregunta11,respuesta,carteles,niveles,explicacion;
+	private JPanel contenedor,portada, inicial, pregunta1,pregunta2,pregunta3,pregunta4,pregunta5,pregunta6,pregunta7,pregunta8,pregunta9, pregunta10, pregunta11,respuesta,acentuacion,misiones,explicacionAcen,explicacionGyJ,GyJ;
 
 
 	/**
@@ -48,9 +50,11 @@ public class FramePrincipal extends JFrame {
 		pregunta10= new Pregunta10(this);
 		pregunta11= new Pregunta11(this);
 		respuesta= new Respuesta(this);
-		carteles= new Carteles(this);
-		niveles = new Niveles(this);
-		explicacion= new Explicacion(this);
+		acentuacion= new Acentuacion(this);
+		misiones = new Misiones(this);
+		explicacionAcen= new ExplicacionAcen(this);
+		explicacionGyJ= new ExplicacionGyJ(this);
+		GyJ= new GyJ(this);
 		
 		
 
@@ -68,17 +72,22 @@ public class FramePrincipal extends JFrame {
 		contenedor.add(pregunta10,"pregunta10");
 		contenedor.add(pregunta11,"pregunta11");
 		contenedor.add(respuesta,"respuesta");
-		contenedor.add(carteles,"carteles");
-		contenedor.add(niveles,"niveles");
-		contenedor.add(explicacion,"explicacion");
+		contenedor.add(acentuacion,"acentuacion");
+		contenedor.add(misiones,"misiones");
+		contenedor.add(explicacionAcen,"explicacionAcen");
+		contenedor.add(explicacionGyJ,"explicacionGyJ");
+		contenedor.add(GyJ,"GyJ");
 
 	}
 	public void CambiaFondo(String panel){
 		CardLayout c=(CardLayout) contenedor.getLayout();
 		c.show(contenedor, panel);
 	}
-	public void temporizadorCarteles(){
-		((Carteles) carteles).comenzar();
+	public void temporizadorAcentuacion(){
+		((Acentuacion) acentuacion).comenzar();
+	}
+	public void temporizadorGyJ(){
+		((GyJ) GyJ).comenzar();
 	}
 
 

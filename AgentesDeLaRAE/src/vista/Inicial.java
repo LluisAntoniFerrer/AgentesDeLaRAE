@@ -120,7 +120,7 @@ public class Inicial extends JPanel {
 		lblMisiones.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				framePrincipal.CambiaFondo("niveles");
+				framePrincipal.CambiaFondo("misiones");
 			}
 		});
 		lblMisiones.setIcon(new ImageIcon(Inicial.class.getResource("/images/misiones.png")));

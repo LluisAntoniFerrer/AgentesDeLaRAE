@@ -12,12 +12,12 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class Explicacion extends JPanel {
+public class ExplicacionGyJ extends JPanel {
 
 	/**
 	 * Create the panel.
 	 */
-	public Explicacion(FramePrincipal framePrincipal) {
+	public ExplicacionGyJ(FramePrincipal framePrincipal) {
 		setBackground(Color.WHITE);
 		setLayout(null);
 		setBounds(0,0,800,640);
@@ -55,9 +55,9 @@ public class Explicacion extends JPanel {
 		JButton btnvamos = new JButton("\u00A1Vamos!");
 		btnvamos.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				framePrincipal.CambiaFondo("carteles");
-				framePrincipal.temporizadorCarteles();
-			}
+				framePrincipal.CambiaFondo("GyJ");
+				framePrincipal.temporizadorGyJ();
+				}
 		});
 		btnvamos.setBounds(537, 495, 115, 29);
 		add(btnvamos);

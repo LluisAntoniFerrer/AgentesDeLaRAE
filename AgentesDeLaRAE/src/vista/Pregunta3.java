@@ -44,7 +44,7 @@ public class Pregunta3 extends JPanel {
 				framePrincipal.CambiaFondo("pregunta4");
 			}
 		});
-		button.setBounds(585, 527, 109, 23);
+		button.setBounds(590, 532, 109, 23);
 		add(button);
 		JLabel fondo = new JLabel("");
 		fondo.setFont(new Font("Segoe Print", Font.BOLD, 18));

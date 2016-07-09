@@ -32,7 +32,7 @@ public class Pregunta4 extends JPanel {
 				framePrincipal.CambiaFondo("pregunta5");
 			}
 		});
-		button.setBounds(591, 522, 109, 23);
+		button.setBounds(590, 532, 109, 23);
 		add(button);
 		
 		JLabel lblindicaLos = new JLabel("3. Indica los elementos de la comunicaci\u00F3n que intervienen en este comic:");

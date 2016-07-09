@@ -121,7 +121,7 @@ public class Pregunta8 extends JPanel {
 				framePrincipal.CambiaFondo("pregunta9");
 			}
 		});
-		btnSiguiente.setBounds(582, 527, 109, 23);
+		btnSiguiente.setBounds(590, 532, 109, 23);
 		add(btnSiguiente);
 		JLabel fondo = new JLabel("");
 		fondo.setIcon(new ImageIcon(Pregunta8.class.getResource("/images/PAPIRO 8.png")));

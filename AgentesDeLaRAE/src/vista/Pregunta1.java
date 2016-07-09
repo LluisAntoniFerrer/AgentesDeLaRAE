@@ -7,6 +7,8 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.awt.event.ActionEvent;
 
 public class Pregunta1 extends JPanel {
@@ -37,17 +39,14 @@ public class Pregunta1 extends JPanel {
 		label.setBounds(185, 319, 427, 41);
 		add(label);
 		
-		JButton button = new JButton("Siguiente >>");
-		button.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
+		JLabel fondo = new JLabel("");
+		fondo.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
 				framePrincipal.CambiaFondo("pregunta2");
 			}
 		});
-		button.setBounds(580, 606, 109, 23);
-		add(button);
-		
-		JLabel fondo = new JLabel("");
-		fondo.setIcon(new ImageIcon(Pregunta1.class.getResource("/images/tablillaPreguntas.png")));
+		fondo.setIcon(new ImageIcon(Pregunta1.class.getResource("/images/papiroInter.png")));
 		fondo.setBounds(0, 0, 800, 640);
 		add(fondo);
 

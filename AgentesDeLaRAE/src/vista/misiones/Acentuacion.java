@@ -17,7 +17,7 @@ import java.awt.event.ActionListener;
 import java.text.DecimalFormat;
 import javax.swing.SwingConstants;
 
-public class Carteles extends JPanel {
+public class Acentuacion extends JPanel {
 	private JTextField textField;
 	private JLabel timeLabel;
 	JLabel lblPunt;
@@ -36,7 +36,7 @@ public class Carteles extends JPanel {
     private DecimalFormat timeFormatter;
     private Timer timer;
     
-	public Carteles(FramePrincipal framePrincipal) {
+	public Acentuacion(FramePrincipal framePrincipal) {
 		setBackground(Color.WHITE);
 		setLayout(null);
 		setBounds(0,0,800,640);
@@ -47,7 +47,7 @@ public class Carteles extends JPanel {
 		
 		
 		timeLabel = new JLabel();
-	    timeLabel.setFont(new Font("Consolas", Font.PLAIN, 13));
+	    timeLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
 	    timeLabel.setBounds(597, 93, 96, 38);
 	    add(timeLabel);
 	    
@@ -145,7 +145,7 @@ public class Carteles extends JPanel {
 	
 	public void cambiaFoto(){
 		numeroCartel = (int) Math.floor(Math.random()*carteles.length);
-		lblImagen.setIcon(new ImageIcon(Carteles.class.getResource("/images/"+carteles[numeroCartel]+".png")));
+		lblImagen.setIcon(new ImageIcon(Acentuacion.class.getResource("/images/"+carteles[numeroCartel]+".png")));
 	}
 	
 	 public void comenzar(){

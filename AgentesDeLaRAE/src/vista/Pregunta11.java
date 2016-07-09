@@ -39,7 +39,7 @@ public class Pregunta11 extends JPanel {
 				framePrincipal.CambiaFondo("respuesta");
 			}
 		});
-		button.setBounds(596, 530, 109, 23);
+		button.setBounds(590, 532, 109, 23);
 		add(button);
 		
 		JLabel lblElaborarUnaEntrevista = new JLabel("Elaborar una entrevista.");
