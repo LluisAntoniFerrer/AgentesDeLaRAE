@@ -22,15 +22,15 @@ public class ExplicacionGyJ extends JPanel {
 		setLayout(null);
 		setBounds(0,0,800,640);
 		
-		JLabel lblNewLabel = new JLabel("Hemos encontrado estas im\u00E1genes en tu ciudad.");
+		JLabel lblNewLabel = new JLabel("Nos han desaparecido algunas fichas del tablero.");
 		lblNewLabel.setBounds(276, 134, 366, 20);
 		add(lblNewLabel);
 		
-		JLabel lblImagenespuedesCorregir = new JLabel("\u00BFPuedes encontrar y corregir todos los errores?");
+		JLabel lblImagenespuedesCorregir = new JLabel("\u00BFPuedes ayudarnos a saber cu\u00E1les son?");
 		lblImagenespuedesCorregir.setBounds(276, 162, 356, 20);
 		add(lblImagenespuedesCorregir);
 		
-		JLabel lblParaElloTendras = new JLabel("Para ello tendr\u00E1s 3 minutos; con cada acierto ");
+		JLabel lblParaElloTendras = new JLabel("Para ello tendr\u00E1s 1 minutos; con cada acierto ");
 		lblParaElloTendras.setBounds(276, 191, 356, 20);
 		add(lblParaElloTendras);
 		
@@ -38,7 +38,7 @@ public class ExplicacionGyJ extends JPanel {
 		lblPeroCuidadoCada.setBounds(276, 215, 356, 20);
 		add(lblPeroCuidadoCada);
 		
-		JLabel lblCadaFalloRestara = new JLabel(" cada fallo restar\u00E1 10 puntos!");
+		JLabel lblCadaFalloRestara = new JLabel(" cada fallo restar\u00E1 50 puntos!");
 		lblCadaFalloRestara.setBounds(276, 243, 356, 20);
 		add(lblCadaFalloRestara);
 		

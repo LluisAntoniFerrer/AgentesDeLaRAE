@@ -34,7 +34,7 @@ public class ExplicacionHorrores extends JPanel {
 		lblImagenespuedesCorregir.setBounds(147, 162, 356, 20);
 		add(lblImagenespuedesCorregir);
 		
-		JLabel lblParaElloTendras = new JLabel("Para ello tendr\u00E1s 2 minutos; con cada acierto ");
+		JLabel lblParaElloTendras = new JLabel("Para ello tendr\u00E1s 3 minutos; con cada acierto ");
 		lblParaElloTendras.setFont(new Font("Tahoma", Font.PLAIN, 16));
 		lblParaElloTendras.setBounds(147, 191, 356, 20);
 		add(lblParaElloTendras);

@@ -44,7 +44,7 @@ public class Pregunta9 extends JPanel {
 		JTextArea textArea_1 = new JTextArea();
 		textArea_1.setWrapStyleWord(true);
 		textArea_1.setLineWrap(true);
-		textArea_1.setBackground(Color.LIGHT_GRAY);
+		textArea_1.setBackground(SystemColor.scrollbar);
 		textArea_1.setFont(new Font("Comic Sans MS", Font.BOLD, 13));
 		textArea_1.setBounds(397, 178, 277, 347);
 		add(textArea_1);

@@ -57,7 +57,7 @@ public class Pregunta10 extends JPanel {
 		add(button_1);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setBackground(Color.LIGHT_GRAY);
+		textArea.setBackground(SystemColor.scrollbar);
 		textArea.setWrapStyleWord(true);
 		textArea.setLineWrap(true);
 		textArea.setBounds(119, 204, 551, 320);

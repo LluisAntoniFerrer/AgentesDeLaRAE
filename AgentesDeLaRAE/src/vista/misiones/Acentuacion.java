@@ -18,6 +18,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.DecimalFormat;
 import javax.swing.SwingConstants;
+import java.awt.SystemColor;
 
 public class Acentuacion extends JPanel {
 	private JTextField textField;
@@ -55,7 +56,7 @@ public class Acentuacion extends JPanel {
 	    
 		textField = new JTextField();
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		textField.setBackground(Color.LIGHT_GRAY);
+		textField.setBackground(SystemColor.scrollbar);
 		textField.setBounds(156, 447, 476, 49);
 		add(textField);
 		textField.setColumns(10);
@@ -68,6 +69,7 @@ public class Acentuacion extends JPanel {
 					punt=punt-10;
 					lblPunt.setText(String.valueOf(punt));
 				}
+				textField.setText("");
 				cambiaFoto();
 			}
 		});

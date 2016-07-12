@@ -18,6 +18,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.text.DecimalFormat;
 import javax.swing.SwingConstants;
+import java.awt.SystemColor;
 
 public class Horrores extends JPanel {
 	private JTextField textField;
@@ -27,7 +28,7 @@ public class Horrores extends JPanel {
 	//propiedades de las fotos
 	
 	String[] carteles=new String[]{"horror","horror1","horror2","horror3","horror4","horror5","horror6","horror7","horror8","horror9","horror10","horror11","horror12","horror13","horror14","horror15","horror16","horror17"};
-	String[] solucion=new String[]{"Cebolla","Dios me sigue ayudando","No se permite alcohol pasando este punto","Solicito empleada","Venta de hielo","Abierto vendo barato","Objetivo","Prohibido asomarse mucho","Abierto empuje","Bienvenidos a su coctelería","bienvenidos","Vacaciones","Prohibido estacionar","Se solicita personal","Conservación","Habla","Ya esta abierto","Por favor no abrir los libros"};
+	String[] solucion=new String[]{"Cebolla","Dios me sigue ayudando","No se permite alcohol pasando este punto","Solicito empleada","Venta de hielo","Abierto vendo barato","Objetivo","Prohibido asomarse mucho","Abierto empuje","Bienvenidos a su coctelería","Bienvenidos","Vacaciones","Prohibido estacionar","Se solicita personal","Conservación","Habla idiomas","Ya está abierto","Por favor no abrir los libros"};
 	int numeroCartel;
 	JLabel lblImagen = new JLabel("");
 	
@@ -55,7 +56,7 @@ public class Horrores extends JPanel {
 	    
 		textField = new JTextField();
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 20));
-		textField.setBackground(Color.LIGHT_GRAY);
+		textField.setBackground(SystemColor.scrollbar);
 		textField.setBounds(156, 447, 476, 49);
 		add(textField);
 		textField.setColumns(10);
@@ -79,6 +80,7 @@ public class Horrores extends JPanel {
 					punt=punt-10;
 					lblPunt.setText(String.valueOf(punt));
 				}
+				textField.setText("");
 				cambiaFoto();
 			}
 		});

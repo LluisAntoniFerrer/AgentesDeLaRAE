@@ -111,7 +111,7 @@ public class Pregunta8 extends JPanel {
 		textArea.setLineWrap(true);
 		textArea.setWrapStyleWord(true);
 		textArea.setFont(new Font("Segoe Print", Font.BOLD, 14));
-		textArea.setBackground(Color.LIGHT_GRAY);
+		textArea.setBackground(SystemColor.scrollbar);
 		textArea.setBounds(112, 241, 576, 275);
 		add(textArea);
 		
