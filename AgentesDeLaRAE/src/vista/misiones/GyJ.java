@@ -31,8 +31,8 @@ public class GyJ extends JPanel {
 	
 	 // Properties of timer.
     private byte centiseconds = 0;
-    private byte seconds = 00;
-    private short minutes = 2;
+    private byte seconds;
+    private short minutes ;
     private DecimalFormat timeFormatter;
     private Timer timer;
     
@@ -44,7 +44,7 @@ public class GyJ extends JPanel {
 		
 		timeLabel = new JLabel();
 	    timeLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
-	    timeLabel.setBounds(558, 93, 135, 49);
+	    timeLabel.setBounds(547, 106, 135, 49);
 	    add(timeLabel);
 		
 		lblPunt = new JLabel("0");
@@ -52,7 +52,7 @@ public class GyJ extends JPanel {
 		lblPunt.setBackground(Color.WHITE);
 		lblPunt.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblPunt.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		lblPunt.setBounds(96, 93, 96, 38);
+		lblPunt.setBounds(96, 117, 96, 38);
 		add(lblPunt);
 		
 		
@@ -91,10 +91,11 @@ public class GyJ extends JPanel {
 					seleccionaPalabra();
 					
 				}else{
-					
-					int punt=Integer.parseInt(lblPunt.getText()) ;
-					punt=punt-50;
-					lblPunt.setText(String.valueOf(punt));
+					if(Integer.parseInt(lblPunt.getText())>0){
+						int punt=Integer.parseInt(lblPunt.getText()) ;
+						punt=punt-50;
+						lblPunt.setText(String.valueOf(punt));
+					}
 					seleccionaPalabra();
 				}
 			}
@@ -126,6 +127,17 @@ public class GyJ extends JPanel {
 		lblJ.setIcon(new ImageIcon(Respuesta.class.getResource("/images/letras/j.png")));
 		add(lblJ);
 		
+		JLabel lblClose = new JLabel("");
+		lblClose.setIcon(new ImageIcon(Respuesta.class.getResource("/images/stop.png")));
+		lblClose.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				framePrincipal.CambiaFondo("inicial");
+			}
+		});
+		lblClose.setBounds(686, 79, 30, 30);
+		add(lblClose);
+		
 		JLabel fondo = new JLabel("");
 		fondo.setIcon(new ImageIcon(Respuesta.class.getResource("/images/PAPIRO 8.png")));
 		fondo.setBounds(0, 0, 800, 640);
@@ -142,6 +154,10 @@ public class GyJ extends JPanel {
                 } else {
                     if (seconds == 0 && minutes == 0) {
                         timer.stop();
+                        
+                        int punt=Integer.parseInt(lblPunt.getText()) ;
+                        framePrincipal.CambiaFondo("final");
+                        framePrincipal.finalizarMision(punt, "GyJ");
                     } else if (seconds > 0) {
                         seconds--;
                         centiseconds = 99;
@@ -188,7 +204,13 @@ public class GyJ extends JPanel {
 	}
 	
 	 public void comenzar(){
-	       
+		minutes= 1;
+		seconds= 00;
+		
+		int punt=Integer.parseInt(lblPunt.getText()) ;
+		punt=0;
+		lblPunt.setText(String.valueOf(punt));
+		
      	timer.start();
      	seleccionaPalabra();
      }

@@ -5,7 +5,6 @@ import java.awt.EventQueue;
 import vista.FramePrincipal;
 
 public class Main {
-	
 	int nivel=1;
 	int fallos=0;
 	

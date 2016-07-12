@@ -14,6 +14,8 @@ import javax.swing.JButton;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.text.DecimalFormat;
 import javax.swing.SwingConstants;
 
@@ -31,8 +33,8 @@ public class Acentuacion extends JPanel {
 	
 	 // Properties of timer.
     private byte centiseconds = 0;
-    private byte seconds = 00;
-    private short minutes = 3;
+    private byte seconds ;
+    private short minutes ;
     private DecimalFormat timeFormatter;
     private Timer timer;
     
@@ -48,7 +50,7 @@ public class Acentuacion extends JPanel {
 		
 		timeLabel = new JLabel();
 	    timeLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
-	    timeLabel.setBounds(597, 93, 96, 38);
+	    timeLabel.setBounds(547, 106, 135, 49);
 	    add(timeLabel);
 	    
 		textField = new JTextField();
@@ -106,8 +108,19 @@ public class Acentuacion extends JPanel {
 		lblPunt.setBackground(Color.WHITE);
 		lblPunt.setHorizontalAlignment(SwingConstants.RIGHT);
 		lblPunt.setFont(new Font("Tahoma", Font.PLAIN, 22));
-		lblPunt.setBounds(96, 93, 96, 38);
+		lblPunt.setBounds(96, 117, 96, 38);
 		add(lblPunt);
+		
+		JLabel lblClose = new JLabel("");
+		lblClose.setIcon(new ImageIcon(Respuesta.class.getResource("/images/stop.png")));
+		lblClose.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				framePrincipal.CambiaFondo("inicial");
+			}
+		});
+		lblClose.setBounds(686, 79, 30, 30);
+		add(lblClose);
 		
 		JLabel fondo = new JLabel("");
 		fondo.setIcon(new ImageIcon(Respuesta.class.getResource("/images/PAPIRO 8.png")));
@@ -125,6 +138,10 @@ public class Acentuacion extends JPanel {
                 } else {
                     if (seconds == 0 && minutes == 0) {
                         timer.stop();
+                        
+                        int punt=Integer.parseInt(lblPunt.getText()) ;
+                        framePrincipal.CambiaFondo("final");
+                        framePrincipal.finalizarMision(punt, "acentuacion");
                     } else if (seconds > 0) {
                         seconds--;
                         centiseconds = 99;
@@ -145,11 +162,17 @@ public class Acentuacion extends JPanel {
 	
 	public void cambiaFoto(){
 		numeroCartel = (int) Math.floor(Math.random()*carteles.length);
-		lblImagen.setIcon(new ImageIcon(Acentuacion.class.getResource("/images/"+carteles[numeroCartel]+".png")));
+		lblImagen.setIcon(new ImageIcon(Acentuacion.class.getResource("/images/acentuacion/"+carteles[numeroCartel]+".png")));
 	}
 	
 	 public void comenzar(){
-	       
+		minutes= 2;
+		seconds= 00;
+		
+		int punt=Integer.parseInt(lblPunt.getText()) ;
+		punt=0;
+		lblPunt.setText(String.valueOf(punt));
+		
      	timer.start();
      	cambiaFoto();
      }

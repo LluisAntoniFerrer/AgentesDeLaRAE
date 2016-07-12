@@ -3,6 +3,7 @@ package vista;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.EventQueue;
+import java.awt.Toolkit;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -13,13 +14,16 @@ import vista.misiones.ExplicacionAcen;
 import vista.misiones.ExplicacionGyJ;
 import vista.misiones.Misiones;
 import vista.misiones.GyJ;
+import vista.misiones.Horrores;
+import vista.misiones.ExplicacionHorrores;
+import vista.misiones.Final;
 
 public class FramePrincipal extends JFrame {
 
 	//private Inicial inicial;
 
-	private JPanel contenedor,portada, inicial, pregunta1,pregunta2,pregunta3,pregunta4,pregunta5,pregunta6,pregunta7,pregunta8,pregunta9, pregunta10, pregunta11,respuesta,acentuacion,misiones,explicacionAcen,explicacionGyJ,GyJ;
-
+	private JPanel contenedor,portada, inicial, pregunta1,pregunta2,pregunta3,pregunta4,pregunta5,pregunta6,pregunta7,pregunta8,pregunta9, pregunta10, pregunta11,respuesta;
+	private JPanel finale,acentuacion,misiones,explicacionAcen,explicacionGyJ,GyJ,horrores,explicacionHorrores;
 
 	/**
 	 * Create the frame.
@@ -27,8 +31,10 @@ public class FramePrincipal extends JFrame {
 	public FramePrincipal() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(300, 50, 813, 675);
-		
-		/*inicial = new Inicial();
+		 setIconImage(Toolkit.getDefaultToolkit().getImage(this.getClass().getResource("/images/agentesLog.png")));
+		 this.setTitle("Los agentes de la RAE");
+		 
+		 /*inicial = new Inicial();
 		setContentPane(inicial);*/
 		
 		contenedor=new JPanel();
@@ -55,6 +61,9 @@ public class FramePrincipal extends JFrame {
 		explicacionAcen= new ExplicacionAcen(this);
 		explicacionGyJ= new ExplicacionGyJ(this);
 		GyJ= new GyJ(this);
+		horrores= new Horrores(this);
+		explicacionHorrores= new ExplicacionHorrores(this);
+		finale= new Final(this);
 		
 		
 
@@ -77,6 +86,9 @@ public class FramePrincipal extends JFrame {
 		contenedor.add(explicacionAcen,"explicacionAcen");
 		contenedor.add(explicacionGyJ,"explicacionGyJ");
 		contenedor.add(GyJ,"GyJ");
+		contenedor.add(explicacionHorrores,"explicacionHorrores");
+		contenedor.add(horrores,"horrores");
+		contenedor.add(finale,"final");
 
 	}
 	public void CambiaFondo(String panel){
@@ -88,6 +100,20 @@ public class FramePrincipal extends JFrame {
 	}
 	public void temporizadorGyJ(){
 		((GyJ) GyJ).comenzar();
+	}
+	public void temporizadorHorrores(){
+		((Horrores) horrores).comenzar();
+	}
+	public void finalizarMision(int puntuacion,String tipoMision){
+		
+		((Final) finale).finalizar(puntuacion,tipoMision);
+		
+		if(tipoMision.equals("GyJ")){
+			GyJ.revalidate();
+			GyJ.repaint();
+		}else if(tipoMision.equals("acentuacion")){
+			acentuacion=new Acentuacion(this);
+		}
 	}
 
 

@@ -45,17 +45,27 @@ public class Pregunta10 extends JPanel {
 		});
 		button.setBounds(590, 532, 109, 23);
 		add(button);
-		JLabel fondo = new JLabel("");
-		fondo.setIcon(new ImageIcon(Pregunta10.class.getResource("/images/PAPIRO 8.png")));
-		fondo.setBounds(0, 0, 800, 640);
-		add(fondo);
+		
+		JButton button_1 = new JButton("<< Atras");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				framePrincipal.CambiaFondo("pregunta9");
+			}
+		});
+		button_1.setBounds(100, 532, 109, 23);
+		add(button_1);
 		
 		JTextArea textArea = new JTextArea();
-		textArea.setBackground(SystemColor.menu);
+		textArea.setBackground(Color.LIGHT_GRAY);
 		textArea.setWrapStyleWord(true);
 		textArea.setLineWrap(true);
 		textArea.setBounds(119, 204, 551, 320);
 		add(textArea);
+		JLabel fondo = new JLabel("");
+		fondo.setIcon(new ImageIcon(Pregunta10.class.getResource("/images/PAPIRO 8.png")));
+		fondo.setBounds(0, 0, 800, 640);
+		add(fondo);
 	}
 
 }

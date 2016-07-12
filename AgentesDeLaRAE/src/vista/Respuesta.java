@@ -5,15 +5,17 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.Font;
 import java.awt.Color;
-import javax.swing.JTextArea;
-import java.awt.SystemColor;
+import java.awt.Component;
+
 import javax.swing.JButton;
-import javax.swing.JRadioButton;
 import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableCellRenderer;
+
 import java.awt.event.ActionListener;
+import java.util.Vector;
 import java.awt.event.ActionEvent;
+import javax.swing.JScrollPane;
 
 public class Respuesta extends JPanel {
 	private JTable table;
@@ -45,35 +47,84 @@ public class Respuesta extends JPanel {
 		btnReiniciarNivel.setBounds(511, 479, 194, 29);
 		add(btnReiniciarNivel);
 		
-		table = new JTable();
-		table.setSurrendersFocusOnKeystroke(true);
-		table.setBorder(new LineBorder(new Color(0, 0, 0)));
-		table.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"1", "0%"},
-				{"2", "0%"},
-				{"3", "0%"},
-				{"4", "0%"},
-				{"5", "0%"},
-				{"6", "0%"},
-				{"7", "0%"},
-				{"8", "0%"},
-				{"9", "0%"},
-				{"10", "0%"},
-			},
-			new String[] {
-				"Nivel", "Aciertos"
-			}
-		) {
-			Class[] columnTypes = new Class[] {
-				String.class, Object.class
-			};
-			public Class getColumnClass(int columnIndex) {
-				return columnTypes[columnIndex];
-			}
-		});
-		table.setBounds(483, 127, 222, 267);
-		add(table);
+		  /* Creo una instancia de la clase Vector llamada 'columnas' */
+        Vector columnas = new Vector();
+        /* 
+            A ese vector le agrego datos, estos datos vendrán a ser las
+            columnas de la tabla.
+        */
+        columnas.add("Ejercicio");
+        columnas.add("Resultado");
+        
+        /* 
+        Creo una instancia de la clase Vector llamada 'filas' , este vector
+        tendrá todas las filas de la tabla.
+         */
+	    Vector filas = new Vector();
+	    
+	    Vector fila = new Vector();
+	    
+	    fila.add("Ejercicio 1");
+	    fila.add("0"+"%");
+        filas.add(fila);
+        
+        fila = new Vector();
+	    
+	    fila.add("Ejercicio 2");
+	    fila.add("0"+"%");
+        filas.add(fila);
+        
+        fila = new Vector();
+	    
+	    fila.add("Ejercicio 3");
+	    fila.add("0"+"%");
+        filas.add(fila);
+        
+        fila = new Vector();
+	    
+	    fila.add("Ejercicio 4");
+	    fila.add("0"+"%");
+        filas.add(fila);
+        
+        fila = new Vector();
+	    
+	    fila.add("Ejercicio 5");
+	    fila.add("0"+"%");
+        filas.add(fila);
+        
+        fila = new Vector();
+	    
+	    fila.add("Ejercicio 6");
+	    fila.add("0"+"%");
+        filas.add(fila);
+        
+        fila = new Vector();
+	    
+	    fila.add("Ejercicio 7");
+	    fila.add("0"+"%");
+        filas.add(fila);
+        
+        fila = new Vector();
+	    
+	    fila.add("Ejercicio 8");
+	    fila.add("0"+"%");
+        filas.add(fila);
+        
+        fila = new Vector();
+	    
+	    fila.add("Ejercicio 9");
+	    fila.add("0"+"%");
+        filas.add(fila);
+        
+        fila = new Vector();
+	    
+	    fila.add("TOTAL");
+	    fila.add("0"+"%");
+        filas.add(fila);
+		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(445, 133, 260, 304);
+		add(scrollPane);
 		
 		JLabel lblAhoraCompruebaTus = new JLabel("\u00BFVolvemos a");
 		lblAhoraCompruebaTus.setFont(new Font("Segoe Print", Font.BOLD, 15));
@@ -103,5 +154,28 @@ public class Respuesta extends JPanel {
 		fondo.setIcon(new ImageIcon(Respuesta.class.getResource("/images/PAPIRO 8.png")));
 		fondo.setBounds(0, 0, 800, 640);
 		add(fondo);
+		
+		table = new JTable(filas,columnas);
+		scrollPane.setViewportView(table);
+		table.setEnabled(false);
+		table.getTableHeader().setFont(new Font("Tahoma", Font.BOLD, 22));
+		table.setFont(new Font("Tahoma", Font.PLAIN, 20));
+		updateRowHeights();
+	}
+	
+	private void updateRowHeights()
+	{
+	    for (int row = 0; row < table.getRowCount(); row++)
+	    {
+	        int rowHeight = table.getRowHeight();
+
+	        for (int column = 0; column < table.getColumnCount(); column++)
+	        {
+	            Component comp = table.prepareRenderer(table.getCellRenderer(row, column), row, column);
+	            rowHeight = Math.max(rowHeight, comp.getPreferredSize().height);
+	        }
+
+	        table.setRowHeight(row, rowHeight);
+	    }
 	}
 }

@@ -44,82 +44,82 @@ public class Pregunta7 extends JPanel {
 		
 		JLabel label = new JLabel("1.");
 		label.setFont(new Font("Segoe Print", Font.BOLD, 14));
-		label.setBounds(157, 427, 32, 14);
+		label.setBounds(178, 411, 32, 14);
 		add(label);
 		
 		textField = new JTextField();
 		textField.setColumns(10);
-		textField.setBounds(187, 425, 128, 20);
+		textField.setBounds(208, 409, 128, 20);
 		add(textField);
 		
 		textField_1 = new JTextField();
 		textField_1.setColumns(10);
-		textField_1.setBounds(187, 453, 128, 20);
+		textField_1.setBounds(208, 437, 128, 20);
 		add(textField_1);
 		
 		JLabel label_1 = new JLabel("2.");
 		label_1.setFont(new Font("Segoe Print", Font.BOLD, 14));
-		label_1.setBounds(157, 455, 32, 14);
+		label_1.setBounds(178, 439, 32, 14);
 		add(label_1);
 		
 		textField_2 = new JTextField();
 		textField_2.setColumns(10);
-		textField_2.setBounds(187, 484, 128, 20);
+		textField_2.setBounds(208, 468, 128, 20);
 		add(textField_2);
 		
 		JLabel label_2 = new JLabel("3.");
 		label_2.setFont(new Font("Segoe Print", Font.BOLD, 14));
-		label_2.setBounds(157, 486, 32, 14);
+		label_2.setBounds(178, 470, 32, 14);
 		add(label_2);
 		
 		textField_3 = new JTextField();
 		textField_3.setColumns(10);
-		textField_3.setBounds(187, 515, 128, 20);
+		textField_3.setBounds(208, 499, 128, 20);
 		add(textField_3);
 		
 		JLabel label_3 = new JLabel("4.");
 		label_3.setFont(new Font("Segoe Print", Font.BOLD, 14));
-		label_3.setBounds(157, 517, 32, 14);
+		label_3.setBounds(178, 501, 32, 14);
 		add(label_3);
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
-		textField_4.setBounds(431, 425, 128, 20);
+		textField_4.setBounds(452, 409, 128, 20);
 		add(textField_4);
 		
 		JLabel label_4 = new JLabel("5.");
 		label_4.setFont(new Font("Segoe Print", Font.BOLD, 14));
-		label_4.setBounds(401, 427, 32, 14);
+		label_4.setBounds(422, 411, 32, 14);
 		add(label_4);
 		
 		textField_5 = new JTextField();
 		textField_5.setColumns(10);
-		textField_5.setBounds(431, 451, 128, 20);
+		textField_5.setBounds(452, 435, 128, 20);
 		add(textField_5);
 		
 		JLabel label_5 = new JLabel("6.");
 		label_5.setFont(new Font("Segoe Print", Font.BOLD, 14));
-		label_5.setBounds(401, 453, 32, 14);
+		label_5.setBounds(422, 437, 32, 14);
 		add(label_5);
 		
 		textField_6 = new JTextField();
 		textField_6.setColumns(10);
-		textField_6.setBounds(431, 482, 128, 20);
+		textField_6.setBounds(452, 466, 128, 20);
 		add(textField_6);
 		
 		JLabel label_6 = new JLabel("7.");
 		label_6.setFont(new Font("Segoe Print", Font.BOLD, 14));
-		label_6.setBounds(401, 484, 32, 14);
+		label_6.setBounds(422, 468, 32, 14);
 		add(label_6);
 		
 		textField_7 = new JTextField();
 		textField_7.setColumns(10);
-		textField_7.setBounds(431, 513, 128, 20);
+		textField_7.setBounds(452, 497, 128, 20);
 		add(textField_7);
 		
 		JLabel label_7 = new JLabel("8.");
 		label_7.setFont(new Font("Segoe Print", Font.BOLD, 14));
-		label_7.setBounds(401, 515, 32, 14);
+		label_7.setBounds(422, 499, 32, 14);
 		add(label_7);
 		
 		JButton button = new JButton("Siguiente >>");
@@ -130,6 +130,17 @@ public class Pregunta7 extends JPanel {
 		});
 		button.setBounds(590, 532, 109, 23);
 		add(button);
+		
+		JButton button_1 = new JButton("<< Atras");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				framePrincipal.CambiaFondo("pregunta6");
+			}
+		});
+		button_1.setBounds(100, 532, 109, 23);
+		add(button_1);
+		
 		JLabel fondo = new JLabel("");
 		fondo.setIcon(new ImageIcon(Pregunta7.class.getResource("/images/PAPIRO 8.png")));
 		fondo.setBounds(0, 0, 800, 640);

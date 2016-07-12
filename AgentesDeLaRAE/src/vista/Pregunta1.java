@@ -21,22 +21,22 @@ public class Pregunta1 extends JPanel {
 		setLayout(null);
 		setBounds(0,0,800,640);
 		
-		JLabel lblUnidadDidactica = new JLabel("Unidad didactica");
+		JLabel lblUnidadDidactica = new JLabel("Unidad didáctica");
 		lblUnidadDidactica.setHorizontalAlignment(SwingConstants.CENTER);
-		lblUnidadDidactica.setFont(new Font("Segoe Print", Font.BOLD, 26));
-		lblUnidadDidactica.setBounds(185, 228, 427, 34);
+		lblUnidadDidactica.setFont(new Font("Segoe Print", Font.BOLD, 34));
+		lblUnidadDidactica.setBounds(185, 171, 427, 34);
 		add(lblUnidadDidactica);
 		
-		JLabel lblLosAgentesDe_1 = new JLabel("LOS AGENTES DE LA RAE");
+		JLabel lblLosAgentesDe_1 = new JLabel("LOS AGENTES");
 		lblLosAgentesDe_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblLosAgentesDe_1.setFont(new Font("Segoe Print", Font.BOLD, 30));
-		lblLosAgentesDe_1.setBounds(185, 420, 427, 34);
+		lblLosAgentesDe_1.setFont(new Font("Segoe Print", Font.BOLD, 44));
+		lblLosAgentesDe_1.setBounds(185, 374, 427, 45);
 		add(lblLosAgentesDe_1);
 		
 		JLabel label = new JLabel("1");
 		label.setHorizontalAlignment(SwingConstants.CENTER);
-		label.setFont(new Font("Segoe Print", Font.BOLD, 50));
-		label.setBounds(185, 319, 427, 41);
+		label.setFont(new Font("Segoe Print", Font.BOLD, 72));
+		label.setBounds(185, 260, 427, 67);
 		add(label);
 		
 		JLabel fondo = new JLabel("");
@@ -46,6 +46,12 @@ public class Pregunta1 extends JPanel {
 				framePrincipal.CambiaFondo("pregunta2");
 			}
 		});
+		
+		JLabel lblDeLaRae = new JLabel("DE LA RAE");
+		lblDeLaRae.setHorizontalAlignment(SwingConstants.CENTER);
+		lblDeLaRae.setFont(new Font("Segoe Print", Font.BOLD, 44));
+		lblDeLaRae.setBounds(185, 435, 427, 45);
+		add(lblDeLaRae);
 		fondo.setIcon(new ImageIcon(Pregunta1.class.getResource("/images/papiroInter.png")));
 		fondo.setBounds(0, 0, 800, 640);
 		add(fondo);

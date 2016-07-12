@@ -35,6 +35,16 @@ public class Pregunta4 extends JPanel {
 		button.setBounds(590, 532, 109, 23);
 		add(button);
 		
+		JButton button_1 = new JButton("<< Atras");
+		button_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				
+				framePrincipal.CambiaFondo("pregunta3");
+			}
+		});
+		button_1.setBounds(100, 532, 109, 23);
+		add(button_1);
+		
 		JLabel lblindicaLos = new JLabel("3. Indica los elementos de la comunicaci\u00F3n que intervienen en este comic:");
 		lblindicaLos.setFont(new Font("Segoe Print", Font.BOLD, 16));
 		lblindicaLos.setBounds(100, 102, 614, 30);
@@ -89,6 +99,8 @@ public class Pregunta4 extends JPanel {
 		lblECodig.setFont(new Font("Segoe Print", Font.BOLD, 14));
 		lblECodig.setBounds(100, 471, 73, 14);
 		add(lblECodig);
+		
+		
 		
 		textField_4 = new JTextField();
 		textField_4.setColumns(10);
