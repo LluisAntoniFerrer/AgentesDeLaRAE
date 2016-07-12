@@ -118,7 +118,16 @@ public class Pregunta8 extends JPanel {
 		JButton btnSiguiente = new JButton("Siguiente >>");
 		btnSiguiente.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				control=0;
+				button.setIcon(new ImageIcon(Pregunta8.class.getResource("/images/play1.png")));
+				try {
+					mi_reproductor.Stop();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				framePrincipal.CambiaFondo("pregunta9");
+				
 			}
 		});
 		btnSiguiente.setBounds(590, 532, 109, 23);
@@ -127,6 +136,14 @@ public class Pregunta8 extends JPanel {
 		JButton button_1 = new JButton("<< Atras");
 		button_1.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				control=0;
+				button.setIcon(new ImageIcon(Pregunta8.class.getResource("/images/play1.png")));
+				try {
+					mi_reproductor.Stop();
+				} catch (Exception e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
 				
 				framePrincipal.CambiaFondo("pregunta7");
 			}

@@ -1,10 +1,12 @@
 package vista.misiones;
 
 import java.awt.Color;
+import java.awt.Font;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextPane;
 
 import vista.FramePrincipal;
 import vista.Respuesta;
@@ -23,34 +25,52 @@ public class ExplicacionHorrores extends JPanel {
 		setBounds(0,0,800,640);
 		
 		JLabel lblNewLabel = new JLabel("Hemos encontrado estas im\u00E1genes en tu ciudad.");
-		lblNewLabel.setBounds(276, 134, 366, 20);
+		lblNewLabel.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblNewLabel.setBounds(147, 134, 366, 20);
 		add(lblNewLabel);
 		
 		JLabel lblImagenespuedesCorregir = new JLabel("\u00BFPuedes encontrar y corregir todos los errores?");
-		lblImagenespuedesCorregir.setBounds(276, 162, 356, 20);
+		lblImagenespuedesCorregir.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblImagenespuedesCorregir.setBounds(147, 162, 356, 20);
 		add(lblImagenespuedesCorregir);
 		
-		JLabel lblParaElloTendras = new JLabel("Para ello tendr\u00E1s 3 minutos; con cada acierto ");
-		lblParaElloTendras.setBounds(276, 191, 356, 20);
+		JLabel lblParaElloTendras = new JLabel("Para ello tendr\u00E1s 2 minutos; con cada acierto ");
+		lblParaElloTendras.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblParaElloTendras.setBounds(147, 191, 356, 20);
 		add(lblParaElloTendras);
 		
 		JLabel lblPeroCuidadoCada = new JLabel(" obtendr\u00E1s 100 puntos, pero cuidado");
-		lblPeroCuidadoCada.setBounds(276, 215, 356, 20);
+		lblPeroCuidadoCada.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblPeroCuidadoCada.setBounds(147, 215, 356, 20);
 		add(lblPeroCuidadoCada);
 		
 		JLabel lblCadaFalloRestara = new JLabel(" cada fallo restar\u00E1 10 puntos!");
-		lblCadaFalloRestara.setBounds(276, 243, 356, 20);
+		lblCadaFalloRestara.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblCadaFalloRestara.setBounds(147, 243, 356, 20);
 		add(lblCadaFalloRestara);
 		
 		JLabel label_2 = new JLabel("");
 		label_2.setIcon(new ImageIcon(Respuesta.class.getResource("/images/bocadilloGrande.png")));
-		label_2.setBounds(178, 81, 550, 261);
+		label_2.setBounds(46, 82, 525, 261);
 		add(label_2);
+		
+		JTextPane txtpncuantosPuntosEres = new JTextPane();
+		txtpncuantosPuntosEres.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		txtpncuantosPuntosEres.setText("\u00BFCuantos puntos eres capaz de hacer?");
+		txtpncuantosPuntosEres.setBounds(523, 304, 93, 92);
+		add(txtpncuantosPuntosEres);
+		
+		JLabel lbl3 = new JLabel("");
+		lbl3.setIcon(new ImageIcon(Respuesta.class.getResource("/images/bocadilloRed200x200.png")));
+		lbl3.setBounds(462, 265, 200, 200);
+		add(lbl3);
 		
 		JLabel label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon(Respuesta.class.getResource("/images/agentes.png")));
 		label_1.setBounds(91, 304, 356, 249);
 		add(label_1);
+		
+		
 		
 		JButton btnvamos = new JButton("\u00A1Vamos!");
 		btnvamos.addActionListener(new ActionListener() {
