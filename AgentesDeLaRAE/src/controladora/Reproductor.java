@@ -1,30 +1,40 @@
 package controladora;
 
-import javazoom.jlgui.basicplayer.BasicPlayer;
 import java.io.File;
 
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
 public class Reproductor {
-	
-	private BasicPlayer player= new BasicPlayer() ;
-	
-	
+	Clip clip;
+	long clipTime=0;
+
 	public void Play() throws Exception {
-		  player.play();
+			clip.setMicrosecondPosition(clipTime);
+			clip.start();
 		}
 		 
 	public void AbrirFichero(String ruta) throws Exception {
-		  player.open(new File(ruta));
+			  clip = AudioSystem.getClip();
+			 AudioInputStream ais = AudioSystem.getAudioInputStream(getClass().getResource(ruta));
+			 clip.open(ais);
 		}
 		 
 	public void Pausa() throws Exception {
-		  player.pause();
+			clipTime= clip.getMicrosecondPosition();
+
+			clip.stop();
 		}
 		 
 	public void Continuar() throws Exception {
-		  player.resume();
+			clip.setMicrosecondPosition(clipTime);
+
+			clip.start();
 		}
 		 
 	public void Stop() throws Exception {
-		  player.stop();
+			clipTime=0;
+			clip.stop();
 		}
 }

@@ -13,6 +13,7 @@ import java.awt.Font;
 import javax.swing.JTextArea;
 
 import controladora.Reproductor;
+import controladora.Reproductor;
 
 import java.awt.SystemColor;
 import java.awt.event.ActionListener;
@@ -33,7 +34,7 @@ public class Pregunta8 extends JPanel {
 		
 		Reproductor mi_reproductor = new Reproductor();
 		  try {
-			mi_reproductor.AbrirFichero("src/sonidos/sonido.wav");
+			mi_reproductor.AbrirFichero("sonido.wav");
 
 		  } catch (Exception e2) {
 			// TODO Auto-generated catch block
