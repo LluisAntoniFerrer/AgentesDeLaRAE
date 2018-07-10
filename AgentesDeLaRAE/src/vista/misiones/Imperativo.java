@@ -20,17 +20,19 @@ import java.text.DecimalFormat;
 import javax.swing.SwingConstants;
 import java.awt.SystemColor;
 
-public class Acentuacion extends JPanel {
+public class Imperativo extends JPanel {
 	private JTextField textField;
 	private JLabel timeLabel;
 	JLabel lblPunt;
 
 	//propiedades de las fotos
 	
-	String[] carteles=new String[]{"acentuacion1","acentuacion2","acentuacion3","acentuacion4","acentuacion5","acentuacion6","acentuacion7","acentuacion8","acentuacion9","acentuacion10"};
-	String[] solucion=new String[]{"precaución","pública","ecológicos","pastelería","júpiter","relojería","brócoli","juguetería","papelería","artículos"};
+	String[] carteles=new String[]{"imperativo1","imperativo2","imperativo3","imperativo4","imperativo5","imperativo6","imperativo7"};
+	String[] frase=new String[]{"Si me queréis, irse.","¡Ser malos! Buenas noches.","¡Correr insensatos!","Luchar y seréis libres en la vida.","Buena suerte y que la suerte este siempre de vuestra parte.","Busca lo más vital nomás y olvidate de la preocupación.","Y ahora, Harry, adentremonos en la oscuridad y vayamos en busca de la aventura."};
+	String[] solucion=new String[]{"Si me queréis, idos.","¡Sed malos! Buenas noches.","¡Corred insensatos!","Luchad y seréis libres en la vida.","Buena suerte y que la suerte esté siempre de vuestra parte.","Busca lo más vital nomás y olvídate de la preocupación.","Y ahora, Harry, adentrémonos en la oscuridad y vayamos en busca de la aventura."};
 	int numeroCartel;
 	JLabel lblImagen = new JLabel("");
+	JLabel lblPregunta = new JLabel("");
 	
 	 // Properties of timer.
     private byte centiseconds = 0;
@@ -39,20 +41,29 @@ public class Acentuacion extends JPanel {
     private DecimalFormat timeFormatter;
     private Timer timer;
     
-	public Acentuacion(FramePrincipal framePrincipal) {
+	public Imperativo(FramePrincipal framePrincipal) {
 		setBackground(Color.WHITE);
 		setLayout(null);
 		setBounds(0,0,800,640);
 		
 		
-		lblImagen.setBounds(156, 147, 476, 284);
+		lblImagen.setBounds(156, 147, 183, 207);
 		add(lblImagen);
 		
-		
 		timeLabel = new JLabel();
-	    timeLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
-	    timeLabel.setBounds(547, 106, 135, 49);
-	    add(timeLabel);
+		timeLabel.setFont(new Font("Tahoma", Font.PLAIN, 24));
+		timeLabel.setBounds(547, 106, 135, 49);
+		add(timeLabel);
+		lblPregunta.setHorizontalAlignment(SwingConstants.CENTER);
+		
+		lblPregunta.setFont(new Font("Tahoma", Font.PLAIN, 16));
+		lblPregunta.setBounds(410, 193, 237, 90);
+		add(lblPregunta);
+		
+		JLabel label_2 = new JLabel("");
+		label_2.setIcon(new ImageIcon(Imperativo.class.getResource("/images/bocadilloGrande350x166.png")));
+		label_2.setBounds(349, 147, 322, 207);
+		add(label_2);
 	    
 		textField = new JTextField();
 		textField.setFont(new Font("Tahoma", Font.PLAIN, 20));
@@ -69,6 +80,7 @@ public class Acentuacion extends JPanel {
 					punt=punt-10;
 					lblPunt.setText(String.valueOf(punt));
 				}
+				textField.setForeground(Color.BLACK);
 				textField.setText("");
 				cambiaFoto();
 			}
@@ -79,7 +91,9 @@ public class Acentuacion extends JPanel {
 		JButton btnCorregir = new JButton("Corregir");
 		btnCorregir.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if(textField.getText().toLowerCase().equals(solucion[numeroCartel])){
+				String aa = textField.getText();
+				String ba = solucion[numeroCartel];
+				if(textField.getText().equals(solucion[numeroCartel])){
 					
 					int punt=Integer.parseInt(lblPunt.getText()) ;
 					punt=punt+100;
@@ -144,7 +158,7 @@ public class Acentuacion extends JPanel {
                         
                         int punt=Integer.parseInt(lblPunt.getText()) ;
                         framePrincipal.CambiaFondo("final");
-                        framePrincipal.finalizarMision(punt, "acentuacion");
+                        framePrincipal.finalizarMision(punt, "imperativo");
                     } else if (seconds > 0) {
                         seconds--;
                         centiseconds = 99;
@@ -164,13 +178,21 @@ public class Acentuacion extends JPanel {
 	}
 	
 	public void cambiaFoto(){
-		numeroCartel = (int) Math.floor(Math.random()*carteles.length);
-		lblImagen.setIcon(new ImageIcon(Acentuacion.class.getResource("/images/acentuacion/"+carteles[numeroCartel]+".png")));
+		if(numeroCartel == 6)
+		{
+			numeroCartel=0;
+			
+		}else{
+			numeroCartel = numeroCartel+1;
+		}
+		lblPregunta.setText("<html>"+frase[numeroCartel]+"</html>");
+		lblImagen.setIcon(new ImageIcon(Acentuacion.class.getResource("/images/imperativo/"+carteles[numeroCartel]+".png")));
 	}
 	
 	 public void comenzar(){
 		minutes= 2;
 		seconds= 00;
+		numeroCartel=-1;
 		
 		int punt=Integer.parseInt(lblPunt.getText()) ;
 		punt=0;
@@ -179,5 +201,4 @@ public class Acentuacion extends JPanel {
      	timer.start();
      	cambiaFoto();
      }
-        
 }

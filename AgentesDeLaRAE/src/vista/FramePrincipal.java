@@ -12,10 +12,16 @@ import javax.swing.border.EmptyBorder;
 import vista.misiones.Acentuacion;
 import vista.misiones.ExplicacionAcen;
 import vista.misiones.ExplicacionGyJ;
+import vista.misiones.ExplicacionH;
 import vista.misiones.Misiones;
+import vista.misiones.Puntuacion;
 import vista.misiones.GyJ;
 import vista.misiones.Horrores;
+import vista.misiones.Imperativo;
+import vista.misiones.MisionH;
 import vista.misiones.ExplicacionHorrores;
+import vista.misiones.ExplicacionImpe;
+import vista.misiones.ExplicacionPuntuacion;
 import vista.misiones.Final;
 
 public class FramePrincipal extends JFrame {
@@ -23,7 +29,7 @@ public class FramePrincipal extends JFrame {
 	//private Inicial inicial;
 
 	private JPanel contenedor,portada, inicial, pregunta1,pregunta2,pregunta3,pregunta4,pregunta5,pregunta6,pregunta7,pregunta8,pregunta9, pregunta10, pregunta11,respuesta;
-	private JPanel finale,acentuacion,misiones,explicacionAcen,explicacionGyJ,GyJ,horrores,explicacionHorrores;
+	private JPanel finale,acentuacion,misiones,explicacionAcen,explicacionGyJ,GyJ,horrores,explicacionHorrores, explicacionImperativo, imperativo, explicacionH, misionH, explicacionPuntuacion, puntuacion;
 
 	/**
 	 * Create the frame.
@@ -63,6 +69,12 @@ public class FramePrincipal extends JFrame {
 		GyJ= new GyJ(this);
 		horrores= new Horrores(this);
 		explicacionHorrores= new ExplicacionHorrores(this);
+		explicacionImperativo= new ExplicacionImpe(this);
+		imperativo= new Imperativo(this);
+		misionH= new MisionH(this);
+		explicacionH= new ExplicacionH(this);
+		puntuacion= new Puntuacion(this);
+		explicacionPuntuacion= new ExplicacionPuntuacion(this);
 		finale= new Final(this);
 		
 		
@@ -88,6 +100,12 @@ public class FramePrincipal extends JFrame {
 		contenedor.add(GyJ,"GyJ");
 		contenedor.add(explicacionHorrores,"explicacionHorrores");
 		contenedor.add(horrores,"horrores");
+		contenedor.add(explicacionImperativo,"explicacionImperativo");
+		contenedor.add(imperativo,"imperativo");
+		contenedor.add(explicacionH,"explicacionH");
+		contenedor.add(misionH,"misionH");
+		contenedor.add(explicacionPuntuacion,"explicacionPuntuacion");
+		contenedor.add(puntuacion,"puntuacion");
 		contenedor.add(finale,"final");
 
 	}
@@ -103,6 +121,15 @@ public class FramePrincipal extends JFrame {
 	}
 	public void temporizadorHorrores(){
 		((Horrores) horrores).comenzar();
+	}
+	public void temporizadorImperativo(){
+		((Imperativo) imperativo).comenzar();
+	}
+	public void temporizadorH(){
+		((MisionH) misionH).comenzar();
+	}
+	public void temporizadorPuntuacion(){
+		((Puntuacion) puntuacion).comenzar();
 	}
 	public void finalizarMision(int puntuacion,String tipoMision){
 		

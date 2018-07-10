@@ -66,6 +66,7 @@ public class Horrores extends JPanel {
 		lblClose.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
+				timer.stop();
 				framePrincipal.CambiaFondo("inicial");
 			}
 		});
@@ -143,7 +144,7 @@ public class Horrores extends JPanel {
                         
                         int punt=Integer.parseInt(lblPunt.getText()) ;
                         framePrincipal.CambiaFondo("final");
-                        framePrincipal.finalizarMision(punt, "acentuacion");
+                        framePrincipal.finalizarMision(punt, "horrores");
                     } else if (seconds > 0) {
                         seconds--;
                         centiseconds = 99;

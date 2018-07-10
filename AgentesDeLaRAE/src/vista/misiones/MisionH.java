@@ -19,16 +19,16 @@ import java.awt.event.MouseEvent;
 import java.text.DecimalFormat;
 import javax.swing.SwingConstants;
 
-public class GyJ extends JPanel {
+public class MisionH extends JPanel {
 	private JLabel timeLabel;
 	JLabel lblPunt;
 
 	//propiedades de las fotos
-	
-	String[] palabras=new String[]{"recoger","gesto","salvaje","agente","vegetal","ángel","mensaje","conserje","lejos","lejía","recoges","tejer","espejo","agenda"};
+
+	String[] palabras=new String[]{"ahora","hora","ahorrar","hueso","hubo","huevo","horror","helado","héroe","hermano","ahorcado","ahí","vehículo","vaho","-aéreo","-olfato","caca-o","ata-úd","-oído","-estatua","-arena","-acercar","-íbamos"};
 	String letra;
 	JLabel[] lblLetra=new JLabel[]{new JLabel(""),new JLabel(""),new JLabel(""),new JLabel(""),new JLabel(""),new JLabel(""),new JLabel(""),new JLabel("")};
-	int contador;
+	
 	 // Properties of timer.
     private byte centiseconds = 0;
     private byte seconds;
@@ -36,7 +36,7 @@ public class GyJ extends JPanel {
     private DecimalFormat timeFormatter;
     private Timer timer;
     
-	public GyJ(FramePrincipal framePrincipal) {
+	public MisionH(FramePrincipal framePrincipal) {
 		setBackground(Color.WHITE);
 		setLayout(null);
 		setBounds(0,0,800,640);
@@ -80,11 +80,11 @@ public class GyJ extends JPanel {
 		lblLetra[7].setBounds(612, 252, 55, 55);
 		add(lblLetra[7]);
 		
-		JLabel lblG = new JLabel("");
-		lblG.addMouseListener(new MouseAdapter() {
+		JLabel lblH = new JLabel("");
+		lblH.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(letra.equals("g")){
+				if(letra.equals("h")){
 					int punt=Integer.parseInt(lblPunt.getText()) ;
 					punt=punt+100;
 					lblPunt.setText(String.valueOf(punt));
@@ -100,15 +100,15 @@ public class GyJ extends JPanel {
 				}
 			}
 		});
-		lblG.setBounds(262, 421, 100, 100);
-		lblG.setIcon(new ImageIcon(Respuesta.class.getResource("/images/letras/g.png")));
-		add(lblG);
+		lblH.setBounds(262, 421, 100, 100);
+		lblH.setIcon(new ImageIcon(Respuesta.class.getResource("/images/letras/h.png")));
+		add(lblH);
 		
-		JLabel lblJ = new JLabel("");
-		lblJ.addMouseListener(new MouseAdapter() {
+		JLabel lblBlanco = new JLabel("");
+		lblBlanco.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(letra.equals("j")){
+				if(letra.equals("-")){
 					int punt=Integer.parseInt(lblPunt.getText()) ;
 					punt=punt+100;
 					lblPunt.setText(String.valueOf(punt));
@@ -123,9 +123,9 @@ public class GyJ extends JPanel {
 				}
 			}
 		});
-		lblJ.setBounds(414, 421, 100, 100);
-		lblJ.setIcon(new ImageIcon(Respuesta.class.getResource("/images/letras/j.png")));
-		add(lblJ);
+		lblBlanco.setBounds(414, 421, 100, 100);
+		lblBlanco.setIcon(new ImageIcon(Respuesta.class.getResource("/images/letras/-.png")));
+		add(lblBlanco);
 		
 		JLabel lblClose = new JLabel("");
 		lblClose.setIcon(new ImageIcon(Respuesta.class.getResource("/images/stop.png")));
@@ -158,7 +158,7 @@ public class GyJ extends JPanel {
                         
                         int punt=Integer.parseInt(lblPunt.getText()) ;
                         framePrincipal.CambiaFondo("final");
-                        framePrincipal.finalizarMision(punt, "GyJ");
+                        framePrincipal.finalizarMision(punt, "misionH");
                     } else if (seconds > 0) {
                         seconds--;
                         centiseconds = 99;
@@ -178,13 +178,8 @@ public class GyJ extends JPanel {
 	}
 	
 	public void seleccionaPalabra(){
-		if(contador == 13){
-			contador=0;
-		}else{
-
-			contador ++;
-		}
-		String palabra =  palabras[contador];
+		
+		String palabra =  palabras[(int) Math.floor(Math.random()*palabras.length)];
 		lblLetra[0].setIcon(null);
 		lblLetra[1].setIcon(null);
 		lblLetra[2].setIcon(null);
@@ -197,12 +192,12 @@ public class GyJ extends JPanel {
 			String let=palabra.charAt(i)+"";
 			lblLetra[i].setIcon(new ImageIcon(Acentuacion.class.getResource("/images/letras/"+let.toLowerCase()+".png")));
 
-			if(let.toLowerCase().equals("j")){
-				letra="j";
+			if(let.toLowerCase().equals("h")){
+				letra="h";
 				lblLetra[i].setIcon(new ImageIcon(Acentuacion.class.getResource("/images/letras/-.png")));
 				
-			}else if(let.toLowerCase().equals("g")){
-				letra="g";
+			}else if(let.toLowerCase().equals("-")){
+				letra="-";
 				lblLetra[i].setIcon(new ImageIcon(Acentuacion.class.getResource("/images/letras/-.png")));
 			}
 			
@@ -212,7 +207,7 @@ public class GyJ extends JPanel {
 	 public void comenzar(){
 		minutes= 1;
 		seconds= 00;
-		contador = -1;
+		
 		int punt=Integer.parseInt(lblPunt.getText()) ;
 		punt=0;
 		lblPunt.setText(String.valueOf(punt));

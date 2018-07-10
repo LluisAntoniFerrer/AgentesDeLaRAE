@@ -52,6 +52,14 @@ public class Final extends JPanel {
 					framePrincipal.temporizadorGyJ();
 				}else if(mision.equals("acentuacion")){
 					framePrincipal.temporizadorAcentuacion();
+				}else if(mision.equals("imperativo")){
+					framePrincipal.temporizadorImperativo();
+				}else if(mision.equals("horrores")){
+					framePrincipal.temporizadorHorrores();
+				}else if(mision.equals("misionH")){
+					framePrincipal.temporizadorH();
+				}else if(mision.equals("puntuacion")){
+					framePrincipal.temporizadorPuntuacion();
 				}
 				
 			}

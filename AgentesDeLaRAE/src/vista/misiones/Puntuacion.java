@@ -19,15 +19,16 @@ import java.awt.event.MouseEvent;
 import java.text.DecimalFormat;
 import javax.swing.SwingConstants;
 
-public class GyJ extends JPanel {
+public class Puntuacion extends JPanel {
 	private JLabel timeLabel;
 	JLabel lblPunt;
 
 	//propiedades de las fotos
 	
-	String[] palabras=new String[]{"recoger","gesto","salvaje","agente","vegetal","ángel","mensaje","conserje","lejos","lejía","recoges","tejer","espejo","agenda"};
-	String letra;
-	JLabel[] lblLetra=new JLabel[]{new JLabel(""),new JLabel(""),new JLabel(""),new JLabel(""),new JLabel(""),new JLabel(""),new JLabel(""),new JLabel("")};
+	String[] frase=new String[]{"Solicitamos ayuda a Pedro","Se lamenta de  que la fiesta haya terminado.","Sandra no viene","Una coma salva vidas","Juan se entera de que Pérez está de vacaciones","Que sea pausa","Cuando tengo más dinero","Solo lo socuciona él","Sandra se entera de que Luis no viene"};
+	String[] solucio1=new String[]{"¿Nos ayudas con estos ejercicios, Pedro?","El festejo terminó desdichadamente.","Luis no viene hoy, Sandra.","Vamos a comer, niños.","Juan, Pérez está de vacaciones.","No, espere.","2,34","Eso solo, él lo recuelve.","Luis no viene hoy,  Sandra."};
+	String[] solucio2=new String[]{"Pedro, nos ayudas, con estos ejercicios.","El festejo terminó, desdichadamente.","Luis, hoy no viene Sandra.","Vamos a comer niños.","Juan está de vacaciones, Pérez.","No espere.","23,4","Eso, solo él lo resuelve.","Luis, no viene hoy,  Sandra."};
+	int[] correcta =new int[]{1,2,2,1,1,1,2,2,1};
 	int contador;
 	 // Properties of timer.
     private byte centiseconds = 0;
@@ -35,8 +36,8 @@ public class GyJ extends JPanel {
     private short minutes ;
     private DecimalFormat timeFormatter;
     private Timer timer;
-    
-	public GyJ(FramePrincipal framePrincipal) {
+    JLabel lbl2,lbl1,lblFrase;
+	public Puntuacion(FramePrincipal framePrincipal) {
 		setBackground(Color.WHITE);
 		setLayout(null);
 		setBounds(0,0,800,640);
@@ -56,35 +57,15 @@ public class GyJ extends JPanel {
 		add(lblPunt);
 		
 		
-		lblLetra[0].setBounds(122, 252, 55, 55);
-		add(lblLetra[0]);
 		
-		lblLetra[1].setBounds(192, 252, 55, 55);
-		add(lblLetra[1]);
-		
-		lblLetra[2].setBounds(262, 252, 55, 55);
-		add(lblLetra[2]);
-		
-		lblLetra[3].setBounds(332, 252, 55, 55);
-		add(lblLetra[3]);
-		
-		lblLetra[4].setBounds(402, 252, 55, 55);
-		add(lblLetra[4]);
-		
-		lblLetra[5].setBounds(472, 252, 55, 55);
-		add(lblLetra[5]);
-		
-		lblLetra[6].setBounds(542, 252, 55, 55);
-		add(lblLetra[6]);
-		
-		lblLetra[7].setBounds(612, 252, 55, 55);
-		add(lblLetra[7]);
-		
-		JLabel lblG = new JLabel("");
-		lblG.addMouseListener(new MouseAdapter() {
+		lbl1 = new JLabel("");
+		lbl1.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lbl1.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl1.setBackground(new Color(255, 204, 102));
+		lbl1.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(letra.equals("g")){
+				if(correcta[contador] == 1){
 					int punt=Integer.parseInt(lblPunt.getText()) ;
 					punt=punt+100;
 					lblPunt.setText(String.valueOf(punt));
@@ -100,15 +81,18 @@ public class GyJ extends JPanel {
 				}
 			}
 		});
-		lblG.setBounds(262, 421, 100, 100);
-		lblG.setIcon(new ImageIcon(Respuesta.class.getResource("/images/letras/g.png")));
-		add(lblG);
+		lbl1.setBounds(96, 421, 268, 124);
+		lbl1.setOpaque(true);
+		add(lbl1);
 		
-		JLabel lblJ = new JLabel("");
-		lblJ.addMouseListener(new MouseAdapter() {
+		lbl2 = new JLabel("");
+		lbl2.setFont(new Font("Tahoma", Font.PLAIN, 17));
+		lbl2.setHorizontalAlignment(SwingConstants.CENTER);
+		lbl2.setBackground(new Color(255, 204, 102));
+		lbl2.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if(letra.equals("j")){
+				if(correcta[contador] == 2){
 					int punt=Integer.parseInt(lblPunt.getText()) ;
 					punt=punt+100;
 					lblPunt.setText(String.valueOf(punt));
@@ -123,9 +107,9 @@ public class GyJ extends JPanel {
 				}
 			}
 		});
-		lblJ.setBounds(414, 421, 100, 100);
-		lblJ.setIcon(new ImageIcon(Respuesta.class.getResource("/images/letras/j.png")));
-		add(lblJ);
+		lbl2.setBounds(414, 421, 268, 124);
+		lbl2.setOpaque(true);
+		add(lbl2);
 		
 		JLabel lblClose = new JLabel("");
 		lblClose.setIcon(new ImageIcon(Respuesta.class.getResource("/images/stop.png")));
@@ -136,6 +120,14 @@ public class GyJ extends JPanel {
 				framePrincipal.CambiaFondo("inicial");
 			}
 		});
+		
+		lblFrase = new JLabel("");
+		lblFrase.setFont(new Font("Tahoma", Font.BOLD, 20));
+		lblFrase.setHorizontalAlignment(SwingConstants.CENTER);
+		lblFrase.setBackground(new Color(204, 153, 51));
+		lblFrase.setBounds(96, 215, 586, 124);
+		lblFrase.setOpaque(true);
+		add(lblFrase);
 		lblClose.setBounds(686, 79, 30, 30);
 		add(lblClose);
 		
@@ -158,7 +150,7 @@ public class GyJ extends JPanel {
                         
                         int punt=Integer.parseInt(lblPunt.getText()) ;
                         framePrincipal.CambiaFondo("final");
-                        framePrincipal.finalizarMision(punt, "GyJ");
+                        framePrincipal.finalizarMision(punt, "puntuacion");
                     } else if (seconds > 0) {
                         seconds--;
                         centiseconds = 99;
@@ -178,35 +170,15 @@ public class GyJ extends JPanel {
 	}
 	
 	public void seleccionaPalabra(){
-		if(contador == 13){
+		if(contador == 8){
 			contador=0;
 		}else{
 
 			contador ++;
 		}
-		String palabra =  palabras[contador];
-		lblLetra[0].setIcon(null);
-		lblLetra[1].setIcon(null);
-		lblLetra[2].setIcon(null);
-		lblLetra[3].setIcon(null);
-		lblLetra[4].setIcon(null);
-		lblLetra[5].setIcon(null);
-		lblLetra[6].setIcon(null);
-		lblLetra[7].setIcon(null);
-		for(int i=0;i<palabra.length();i++){
-			String let=palabra.charAt(i)+"";
-			lblLetra[i].setIcon(new ImageIcon(Acentuacion.class.getResource("/images/letras/"+let.toLowerCase()+".png")));
-
-			if(let.toLowerCase().equals("j")){
-				letra="j";
-				lblLetra[i].setIcon(new ImageIcon(Acentuacion.class.getResource("/images/letras/-.png")));
-				
-			}else if(let.toLowerCase().equals("g")){
-				letra="g";
-				lblLetra[i].setIcon(new ImageIcon(Acentuacion.class.getResource("/images/letras/-.png")));
-			}
-			
-		}
+		lbl1.setText("<html>"+solucio1[contador]+"</html>");
+		lbl2.setText("<html>"+solucio2[contador]+"</html>");
+		lblFrase.setText(frase[contador]);
 	}
 	
 	 public void comenzar(){

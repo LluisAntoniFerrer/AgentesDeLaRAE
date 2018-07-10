@@ -52,6 +52,12 @@ public class Misiones extends JPanel {
 		JLabel label_1 = new JLabel("");
 		label_1.setIcon(new ImageIcon(Inicial.class.getResource("/images/misiones/hache.png")));
 		label_1.setBounds(657, 271, 122, 43);
+		label_1.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				framePrincipal.CambiaFondo("explicacionH");
+			}
+		});
 		add(label_1);
 		
 		JLabel label_2 = new JLabel("");
@@ -68,6 +74,12 @@ public class Misiones extends JPanel {
 		JLabel label_3 = new JLabel("");
 		label_3.setIcon(new ImageIcon(Inicial.class.getResource("/images/misiones/imperativo.png")));
 		label_3.setBounds(15, 94, 223, 43);
+		label_3.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				framePrincipal.CambiaFondo("explicacionImperativo");
+			}
+		});
 		add(label_3);
 		
 		JLabel label_4 = new JLabel("");
@@ -78,6 +90,12 @@ public class Misiones extends JPanel {
 		JLabel label_5 = new JLabel("");
 		label_5.setIcon(new ImageIcon(Inicial.class.getResource("/images/misiones/puntuacion.png")));
 		label_5.setBounds(633, 212, 146, 43);
+		label_5.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				framePrincipal.CambiaFondo("explicacionPuntuacion");
+			}
+		});
 		add(label_5);
 		
 		JLabel label_6 = new JLabel("LOS AGENTES");
