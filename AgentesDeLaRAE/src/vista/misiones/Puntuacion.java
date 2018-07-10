@@ -176,8 +176,8 @@ public class Puntuacion extends JPanel {
 
 			contador ++;
 		}
-		lbl1.setText("<html>"+solucio1[contador]+"</html>");
-		lbl2.setText("<html>"+solucio2[contador]+"</html>");
+		lbl1.setText("<html><div style='text-align: center;'>"+solucio1[contador]+"</div></html>");
+		lbl2.setText("<html><div style='text-align: center;'>"+solucio2[contador]+"</div></html>");
 		lblFrase.setText(frase[contador]);
 	}
 	
